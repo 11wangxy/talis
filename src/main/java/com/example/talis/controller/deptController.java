@@ -49,11 +49,11 @@ public class deptController {
         return Result.success(list);
     }
 
-    @PutMapping ("/depts")
-    public Result update(@RequestBody Dept dept) {
-        log.info("根据put方式新增部门{}", dept);
-        deptService.update(dept);
-        return Result.success();
-    }
+//    @PutMapping ("/depts")
+//    public Result update(@RequestBody Dept dept) {
+//        log.info("根据put方式新增部门{}", dept);
+//        deptService.update(dept);
+//        return Result.success();
+//    }
 }
 
