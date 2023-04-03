@@ -3,21 +3,30 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.talis.mapper.empMapper">
+
     <select id="list" resultType="com.example.talis.pojo.Emp">
         select *
         from emp
-<!--        动态where和自动去除and-->
+        <!--        动态where和自动去除and-->
         <where>
-        <if test="name!=null">
-            name like concat('%', #{name}, '%')
-        </if>
-        <if test="gender!=null">
-            and gender = #{gender}
-        </if>
-        <if test="begin!=null and end!=null">
-            and entrydate between #{begin} and #{end}
-        </if>
+            <if test="name!=null">
+                name like concat('%', #{name}, '%')
+            </if>
+            <if test="gender!=null">
+                and gender = #{gender}
+            </if>
+            <if test="begin!=null and end!=null">
+                and entrydate between #{begin} and #{end}
+            </if>
         </where>
         order by update_time desc
     </select>
+<!--    批量删除id-->
+    <delete id="delete">
+        delete from emp where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
 </mapper>

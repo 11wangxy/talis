@@ -6,19 +6,19 @@ import com.example.talis.pojo.Emp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.talis.service.empServie;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @Slf4j
+@RequestMapping("/emps")
 public class empController {
     @Autowired
     private empServie empServie;
-    @GetMapping("/emps")
+    @GetMapping
     public Result page(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "5") Integer pageSize,
                        String name, Short gender,
@@ -28,5 +28,16 @@ public class empController {
         PageBean pageBean = empServie.page(page,pageSize,name,gender,begin,end);
         return Result.success(pageBean);
     }
-
+    @DeleteMapping("/{ids}")
+    public Result delete(@PathVariable List<Integer> ids){
+        log.info("执行批量删除，id值为{}",ids);
+        empServie.delete(ids);
+        return Result.success();
+    }
+    @PostMapping
+    public Result save(@RequestBody Emp emp){
+        log.info("新增员工{}",emp);
+        empServie.save(emp);
+        return Result.success();
+    }
 }
