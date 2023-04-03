@@ -10,4 +10,6 @@ public interface deptService {
     List<Dept> list();
 
     void delete(Integer id);
+
+    void add(Dept dept);
 }

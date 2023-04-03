@@ -25,11 +25,16 @@ public class deptController {
         List<Dept> deptList = deptService.list();
         return Result.success(deptList);
     }
-
     @DeleteMapping("/depts/{id}")
-    public Result delete(@PathVariable Integer id){
-        log.info("删除id为{}的数据",id);
+    public Result delete(@PathVariable("id") Integer id){
+        log.info("根据id{}删除部门",id);
         deptService.delete(id);
+        return Result.success();
+    }
+    @PostMapping("/depts")
+    public Result add(@RequestBody Dept dept){
+        log.info("根据post方式新增部门{}",dept);
+        deptService.add(dept);
         return Result.success();
     }
 }
