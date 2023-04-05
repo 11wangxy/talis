@@ -14,6 +14,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/upload")
 public class uploadController {
+    //存储在本地
     @PostMapping
     public Result upload(String username, Integer age, MultipartFile image) throws Exception{
         log.info("文件上传{}{}{}",username,age,image);
