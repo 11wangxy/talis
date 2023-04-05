@@ -14,6 +14,7 @@ public interface deptService {
     void add(Dept dept);
 
     List<Dept> select(Integer id);
-//
-//    void update(Dept dept);
+
+    void update(Dept dept);
+
 }

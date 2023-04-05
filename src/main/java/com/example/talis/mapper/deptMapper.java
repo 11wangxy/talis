@@ -15,6 +15,6 @@ public interface deptMapper {
     void insert(Dept dept);
     @Select("select * from dept where id=#{id}")
     List<Dept> select(Integer id);
-//    @Update("update dept set name=#{name},update_time=#{updateTime}")
-//    void updates(Dept dept);
+    @Update("update dept set name=#{name},update_time=#{updateTime} where id=#{id}")
+    void updates(Dept dept);
 }
