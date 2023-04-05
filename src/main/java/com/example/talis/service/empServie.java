@@ -2,9 +2,11 @@ package com.example.talis.service;
 
 import com.example.talis.pojo.Emp;
 import com.example.talis.pojo.PageBean;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+
 
 public interface empServie {
 
@@ -17,4 +19,7 @@ public interface empServie {
     Emp getById(Integer id);
 
     void update(Emp emp);
+
+
+    Emp login(Emp emp);
 }

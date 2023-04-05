@@ -62,4 +62,9 @@ public class empServiceImpl implements empServie{
         emp.setUpdateTime(LocalDateTime.now());
         empMapper.update(emp);
     }
+
+    @Override
+    public Emp login(Emp emp) {
+        return empMapper.getByUsername(emp);//根据用户名和密码进行查询
+    }
 }

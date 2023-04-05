@@ -14,7 +14,7 @@ import com.example.talis.service.deptService;
 import java.util.List;
 
 @Slf4j
-@RestController
+@RestController//将类型转化为json格式返回
 public class deptController {
     @Autowired
     private deptService deptService;
