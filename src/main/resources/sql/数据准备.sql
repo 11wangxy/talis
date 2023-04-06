@@ -1,3 +1,6 @@
+use test;
+drop table dept;
+drop table emp;
 -- 部门管理
 create table dept(
     id int unsigned primary key auto_increment comment '主键ID',
@@ -24,6 +27,7 @@ create table emp (
   create_time datetime not null comment '创建时间',
   update_time datetime not null comment '修改时间'
 ) comment '员工表';
+
 
 INSERT INTO emp
 	(id, username, password, name, gender, image, job, entrydate,dept_id, create_time, update_time) VALUES
