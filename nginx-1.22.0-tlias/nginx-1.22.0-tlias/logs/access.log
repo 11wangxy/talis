@@ -298,3 +298,5 @@
 127.0.0.1 - - [06/Apr/2023:18:20:46 +0800] "POST /api/depts HTTP/1.1" 200 54 "http://localhost:90/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
 127.0.0.1 - - [06/Apr/2023:18:23:01 +0800] "GET /api/depts/1 HTTP/1.1" 200 144 "http://localhost:90/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
 127.0.0.1 - - [06/Apr/2023:18:23:12 +0800] "POST /api/depts HTTP/1.1" 200 54 "http://localhost:90/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+127.0.0.1 - - [06/Apr/2023:20:58:34 +0800] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+127.0.0.1 - - [06/Apr/2023:20:58:38 +0800] "GET /api/depts HTTP/1.1" 404 555 "http://localhost:90/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"

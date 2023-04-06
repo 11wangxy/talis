@@ -27,6 +27,7 @@ public class loginController {
             claims.put("id",e.getId());
             claims.put("name",e.getName());
             claims.put("username",e.getUsername());
+
             String jwt = JwtUtils.generateJwt(claims);
             log.info("生成的jwt令牌：\n{}",jwt);
             return Result.success(jwt);

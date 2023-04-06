@@ -1,5 +1,6 @@
 package com.example.talis.controller;
 
+import com.example.talis.anno.log;
 import com.example.talis.pojo.PageBean;
 import com.example.talis.pojo.Result;
 import com.example.talis.pojo.Emp;
@@ -28,12 +29,15 @@ public class empController {
         PageBean pageBean = empServie.page(page,pageSize,name,gender,begin,end);
         return Result.success(pageBean);
     }
+    @com.example.talis.anno.log
     @DeleteMapping("/{ids}")
     public Result delete(@PathVariable List<Integer> ids){
         log.info("执行批量删除，id值为{}",ids);
         empServie.delete(ids);
         return Result.success();
     }
+
+    @com.example.talis.anno.log
     @PostMapping
     public Result save(@RequestBody Emp emp){
         log.info("新增员工{}",emp);
@@ -46,6 +50,7 @@ public class empController {
         Emp emps= empServie.getById(id);
         return Result.success(emps);
     }
+    @com.example.talis.anno.log
     @PutMapping
     public Result update(@RequestBody Emp emp){
         log.info("更新数据{}",emp);
